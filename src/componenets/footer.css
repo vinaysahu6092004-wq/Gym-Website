@@ -1,0 +1,121 @@
+.footer {
+  background: linear-gradient(135deg, #0f172a, #111827, #0b0f19);
+  color: #f9fafb;
+  padding: 4rem 1.5rem 2rem;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle top glow line */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #facc15, transparent);
+}
+
+/* Container */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* Logo */
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #facc15, #eab308, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  transition: transform 0.4s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Links */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Underline hover animation */
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #facc15;
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #facc15;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* Social Icons */
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  color: #f9fafb;
+  font-size: 1.2rem;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Premium hover effect */
+.footer-socials a:hover {
+  background: #facc15;
+  color: #000;
+  transform: translateY(-6px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(250, 204, 21, 0.4);
+}
+
+/* Copyright */
+.footer-copy {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 1.5rem;
+  width: 100%;
+  text-align: center;
+}

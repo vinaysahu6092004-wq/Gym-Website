@@ -1,0 +1,173 @@
+/* ===== SECTION ===== */
+.plans-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0a0f1c, #111827);
+  color: white;
+  text-align: center;
+}
+
+/* Header */
+.plans-header h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.plans-header p {
+  color: #9ca3af;
+  font-size: 1.2rem;
+  margin-bottom: 4rem;
+}
+
+/* Grid */
+.plans-grid {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .plans-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== CARD ===== */
+.plan-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Glow border animation */
+.plan-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(45deg, #facc15, #f97316, #facc15);
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.plan-card:hover::before {
+  opacity: 1;
+  animation: glowBorder 3s linear infinite;
+}
+
+/* Hover Animation */
+.plan-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Featured */
+.plan-card.featured {
+  border: 2px solid #facc15;
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: 20px;
+  right: -40px;
+  background: linear-gradient(45deg, #facc15, #f97316);
+  color: black;
+  padding: 0.5rem 3rem;
+  transform: rotate(45deg);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* Title */
+.plan-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Price */
+.price {
+  margin-bottom: 1.5rem;
+}
+
+.amount {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #facc15;
+}
+
+.duration {
+  color: #9ca3af;
+}
+
+/* Features */
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.plan-card ul li {
+  margin-bottom: 0.8rem;
+  color: #e5e7eb;
+  transition: transform 0.3s ease;
+}
+
+/* Feature slide effect */
+.plan-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(45deg, #bfa14a, #8b5e3c, #bfa14a);
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.plan-card:hover::before {
+  opacity: 0.7;   /* was 1 → reduced for subtle look */
+  animation: glowBorder 6s linear infinite; /* slower animation */
+}
+
+/* Button */
+.plan-btn {
+  padding: 0.9rem 2.5rem;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(45deg, #e7cb66, #f97316);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button Hover Glow */
+.plan-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 35px rgba(204, 182, 92, 0.7);
+}
+
+/* ===== Animations ===== */
+@keyframes glowBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
